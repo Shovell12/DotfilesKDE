@@ -1,0 +1,21 @@
+[Libinput][1133][49305][Logitech G502 X]
+PointerAccelerationProfile=1
+
+[Libinput][1267][12926][ELAN06FA:00 04F3:327E Mouse]
+PointerAccelerationProfile=1
+
+[Libinput][1267][12926][ELAN06FA:00 04F3:327E Touchpad]
+DisableEventsOnExternalMouse=true
+NaturalScroll=true
+
+[Libinput][14139][4160][Compx MAD 8K DONGLE]
+PointerAccelerationProfile=1
+
+[Libinput][14139][4160][Compx MAD 8K DONGLE Mouse]
+PointerAccelerationProfile=1
+
+[Libinput][3141][32774][SONiX USB DEVICE Mouse]
+PointerAccelerationProfile=1
+
+[Mouse]
+cursorTheme=Breeze_Light
