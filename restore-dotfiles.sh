@@ -52,9 +52,9 @@ done
 # ─── Kitty ──────────────────────────────────────────────────
 section "Restaurando configuración de Kitty"
 
-if [ -d "$DOTFILES/kitty" ] && [ "$(ls -A $DOTFILES/kitty)" ]; then
+if [ -d "$DOTFILES/kitty" ] && [ "$(ls -A $DOTFILES/kitty 2>/dev/null)" ]; then
     mkdir -p "$HOME/.config/kitty"
-    cp -r "$DOTFILES/kitty/"* "$HOME/.config/kitty/"
+    cp -r "$DOTFILES/kitty/"* "$HOME/.config/kitty/" 2>/dev/null || true
     log "Restaurado: kitty"
 else
     warn "No encontrado: kitty (omitido)"

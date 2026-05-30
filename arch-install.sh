@@ -140,7 +140,6 @@ section "Instalando paquetes AUR"
 yay -S --needed --noconfirm \
     debtap \
     protonup-qt \
-    qtspim \
     vscodium-bin \
     prismlauncher
 log "Paquetes AUR instalados"
