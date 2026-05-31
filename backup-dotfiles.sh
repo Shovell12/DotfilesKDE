@@ -90,6 +90,19 @@ if [ -d "$HOME/.local/share/aurorae/themes/MoeDark" ]; then
     log "Copiado: decoración MoeDark"
 fi
 
+# ─── Widgets de terceros ─────────────────────────────────────
+section "Copiando widgets de terceros"
+
+mkdir -p "$DOTFILES/plasmoids"
+for widget in \
+    "luisbocanegra.panel.colorizer" \
+    "luisbocanegra.panelspacer.extended"; do
+    if [ -d "$HOME/.local/share/plasma/plasmoids/$widget" ]; then
+        cp -r "$HOME/.local/share/plasma/plasmoids/$widget" "$DOTFILES/plasmoids/"
+        log "Copiado: $widget"
+    fi
+done
+
 # ─── Kitty ──────────────────────────────────────────────────
 section "Copiando configuración de Kitty"
 

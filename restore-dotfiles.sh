@@ -89,6 +89,15 @@ if [ -d "$DOTFILES/aurorae" ]; then
     log "Restaurado: decoración MoeDark"
 fi
 
+# ─── Widgets de terceros ─────────────────────────────────────
+section "Restaurando widgets de terceros"
+
+if [ -d "$DOTFILES/plasmoids" ] && [ "$(ls -A $DOTFILES/plasmoids 2>/dev/null)" ]; then
+    mkdir -p "$HOME/.local/share/plasma/plasmoids"
+    cp -r "$DOTFILES/plasmoids/"* "$HOME/.local/share/plasma/plasmoids/"
+    log "Restaurado: widgets"
+fi
+
 # ─── Kitty ──────────────────────────────────────────────────
 section "Restaurando configuración de Kitty"
 
