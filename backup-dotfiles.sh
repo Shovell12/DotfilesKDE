@@ -32,13 +32,17 @@ KDE_FILES=(
     "plasma-org.kde.plasma.desktop-appletsrc"
     "plasmashellrc"
     "kwinrc"
+    "kwinoutputconfig.json"
     "kglobalshortcutsrc"
+    "khotkeysrc"
     "kdeglobals"
+    "kdedefaults"
     "plasmarc"
     "kscreenlockerrc"
     "kcminputrc"
     "kxkbrc"
-    "khotkeysrc"
+    "plasma-localerc"
+    "plasmakeyboardrc"
 )
 
 for f in "${KDE_FILES[@]}"; do
@@ -49,6 +53,15 @@ for f in "${KDE_FILES[@]}"; do
         echo -e "  [~] No encontrado: $f (omitido)"
     fi
 done
+
+# ─── Tema personalizado ──────────────────────────────────────
+section "Copiando tema personalizado"
+
+if [ -d "$HOME/.local/share/plasma/look-and-feel/Personalized" ]; then
+    mkdir -p "$DOTFILES/plasma-theme"
+    cp -r "$HOME/.local/share/plasma/look-and-feel/Personalized" "$DOTFILES/plasma-theme/"
+    log "Copiado: tema Personalized"
+fi
 
 # ─── Kitty ──────────────────────────────────────────────────
 section "Copiando configuración de Kitty"
