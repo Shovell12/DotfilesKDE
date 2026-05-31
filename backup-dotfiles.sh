@@ -72,6 +72,24 @@ if [ -d /etc/sddm.conf.d ]; then
     log "Copiado: sddm.conf.d"
 fi
 
+# ─── Iconos y temas de ventana ───────────────────────────────
+section "Copiando iconos y decoraciones"
+
+mkdir -p "$DOTFILES/icons"
+mkdir -p "$DOTFILES/aurorae"
+
+if [ -d "$HOME/.local/share/icons/Papirus" ]; then
+    cp -r "$HOME/.local/share/icons/Papirus" "$DOTFILES/icons/"
+    cp -r "$HOME/.local/share/icons/Papirus-Dark" "$DOTFILES/icons/"
+    cp -r "$HOME/.local/share/icons/Papirus-Light" "$DOTFILES/icons/"
+    log "Copiado: iconos Papirus"
+fi
+
+if [ -d "$HOME/.local/share/aurorae/themes/MoeDark" ]; then
+    cp -r "$HOME/.local/share/aurorae/themes/MoeDark" "$DOTFILES/aurorae/"
+    log "Copiado: decoración MoeDark"
+fi
+
 # ─── Kitty ──────────────────────────────────────────────────
 section "Copiando configuración de Kitty"
 

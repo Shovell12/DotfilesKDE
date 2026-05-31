@@ -74,6 +74,21 @@ if [ -d "$DOTFILES/plasma-theme/Personalized" ]; then
     log "Restaurado: tema Personalized"
 fi
 
+# ─── Iconos y temas de ventana ───────────────────────────────
+section "Restaurando iconos y decoraciones"
+
+if [ -d "$DOTFILES/icons" ]; then
+    mkdir -p "$HOME/.local/share/icons"
+    cp -r "$DOTFILES/icons/"* "$HOME/.local/share/icons/"
+    log "Restaurado: iconos"
+fi
+
+if [ -d "$DOTFILES/aurorae" ]; then
+    mkdir -p "$HOME/.local/share/aurorae/themes"
+    cp -r "$DOTFILES/aurorae/"* "$HOME/.local/share/aurorae/themes/"
+    log "Restaurado: decoración MoeDark"
+fi
+
 # ─── Kitty ──────────────────────────────────────────────────
 section "Restaurando configuración de Kitty"
 
