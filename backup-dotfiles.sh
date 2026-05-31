@@ -63,6 +63,15 @@ if [ -d "$HOME/.local/share/plasma/look-and-feel/Personalized" ]; then
     log "Copiado: tema Personalized"
 fi
 
+# ─── SDDM ───────────────────────────────────────────────────
+section "Copiando configuración de SDDM"
+
+mkdir -p "$DOTFILES/sddm"
+if [ -d /etc/sddm.conf.d ]; then
+    sudo cp /etc/sddm.conf.d/*.conf "$DOTFILES/sddm/" 2>/dev/null || true
+    log "Copiado: sddm.conf.d"
+fi
+
 # ─── Kitty ──────────────────────────────────────────────────
 section "Copiando configuración de Kitty"
 

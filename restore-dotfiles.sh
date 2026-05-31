@@ -54,6 +54,17 @@ for f in "${KDE_FILES[@]}"; do
     fi
 done
 
+# ─── SDDM ───────────────────────────────────────────────────
+section "Restaurando configuración de SDDM"
+
+if [ -d "$DOTFILES/sddm" ] && [ "$(ls -A $DOTFILES/sddm 2>/dev/null)" ]; then
+    sudo mkdir -p /etc/sddm.conf.d
+    sudo cp "$DOTFILES/sddm/"* /etc/sddm.conf.d/
+    log "Restaurado: sddm"
+else
+    warn "No encontrado: sddm (omitido)"
+fi
+
 # ─── Tema personalizado ──────────────────────────────────────
 section "Restaurando tema personalizado"
 
