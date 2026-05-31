@@ -38,6 +38,7 @@ KDE_FILES=(
     "kscreenlockerrc"
     "kcminputrc"
     "kxkbrc"
+    "khotkeysrc"
 )
 
 for f in "${KDE_FILES[@]}"; do
