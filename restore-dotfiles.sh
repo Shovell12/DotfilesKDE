@@ -140,6 +140,13 @@ if [ -f "$DOTFILES/.gitconfig" ]; then
     log "Restaurado: .gitconfig"
 fi
 
+# ─── Reiniciar plasmashell ───────────────────────────────────
+section "Reiniciando plasmashell"
+kquitapp6 plasmashell 2>/dev/null || true
+sleep 2
+kstart6 plasmashell 2>/dev/null &
+log "plasmashell reiniciado"
+
 # ─── Fin ────────────────────────────────────────────────────
 section "¡Restauración completa!"
 echo -e "${GREEN}Reinicia la sesión de KDE para aplicar los cambios.${NC}"
